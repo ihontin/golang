@@ -28,13 +28,41 @@ func isPalindrome(s *string) bool {
 }
 
 // CountOccurrences должна вернуть количество вхождений числа в срез.
+func CountOccurrences(numbers *[]int, target *int) int {
+	var count int
+	for _, num := range *numbers {
+		if num == *target {
+			count++
+		}
+	}
+	return count
+}
 
 // ReverseString должна развернуть строку и вернуть результат.
+func ReverseString(str *string) string {
+	var reversStr string
+	for _, letter := range *str {
+		reversStr = string(letter) + reversStr
+	}
+	return reversStr
+}
+
+const (
+	first = iota + 1
+	sec
+	th
+	fi
+	six
+	seven
+	eh
+)
 
 func main() {
 	var a = 6
 	fmt.Println("Factorial 6: ", Factorial(&a))
-	var strNew = "fo7!#!7owf"
+	var strNew, taskFour = "fwo7!#!7owf", "something unusual"
 	fmt.Println(len(strNew), isPalindrome(&strNew))
+	fmt.Println(ReverseString(&taskFour))
+	fmt.Println(seven, eh)
 
 }
