@@ -63,7 +63,7 @@ func main() {
 	text, err := reader.ReadString('\n') // считывает до обнаруженния символа '\n'
 
 	if err != nil {
-		fmt.Errorf("ReadString unsucsessful: %v", err) //плейсхолдер %v универсальный
+		fmt.Printf("ReadString unsucsessful: %v", err) //плейсхолдер %v универсальный
 	}
 	text = strings.TrimSuffix(text, "\n") // убрать символ с конца
 	text = strings.TrimSpace(text)        // убрать пробелы с вначале и конце
@@ -77,7 +77,7 @@ func main() {
 		sliceInteger[i] = convert
 
 		if err != nil {
-			fmt.Errorf("strconv.Atoi unsucsessful: %v", err)
+			fmt.Printf("strconv.Atoi unsucsessful: %v", err)
 		}
 	}
 
