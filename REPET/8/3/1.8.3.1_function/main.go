@@ -2,18 +2,20 @@ package main
 
 import "fmt"
 
-func UserInfo(name string, age int, cities ...string) string {
-	var allCity string
-	for i, cit := range cities {
-		if i != 0 {
-			allCity += ", "
+func UserInfo(name []int) int {
+	var allCity = 0
+	for i := 0; i < len(name); i++ {
+		if name[i]%2 == 0 {
+			allCity += name[i]
+		} else {
+			allCity -= name[i]
 		}
-		allCity += cit
+
 	}
-	return fmt.Sprintf("Имя: %s, возраст: %d, города: %v", name, age, allCity)
+	return allCity
 }
 
 func main() {
-	fmt.Println(UserInfo("Griga", 2, "Benglad", "Urban", "Impal"))
+	fmt.Println(UserInfo([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}))
 
 }
